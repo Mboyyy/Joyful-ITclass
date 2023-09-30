@@ -1,0 +1,1245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+/* vote Mikuni and stop looking at the code kthxbai */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+*::selection {
+  color: #22b4b7;
+}
+html {
+  scroll-behavior: smooth;
+}
+.max-width {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background: #121212;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #22b4b7;
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.25), inset -2px -2px -2px rgba(0,0,0,0.25);
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  padding: 30px 0;
+  font-family: 'Ubuntu', sans-serif;
+  transition: all 0.3s ease;
+  z-index: 99999;
+}
+.navbar.sticky {
+  padding: 15px 0;
+  background: #22b4b7;
+}
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar .logo a {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+.navbar .logo a span {
+  color: #22b4b7;
+  transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span {
+  color: #fff;
+}
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+.navbar .menu li a {
+  display: block;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+.navbar .menu li a:hover {
+  color: #22b4b7;
+}
+.navbar.sticky .menu li a:hover {
+  color: #fff;
+}
+
+.menu-btn {
+  color: #fff;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: #22b4b7;
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#particles-js {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+.home {
+  display: flex;
+  background: #121212 no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  color: #fff;
+  min-height: 500px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width {
+  margin: auto 0 auto 150px;
+}
+.home .home-content .text-1 {
+  font-size: 27px;
+}
+.home .home-content .text-2 {
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+.home .home-content .text-3 {
+  font-size: 40px;
+  margin: 5px 0;
+}
+.home .home-content .text-3 span {
+  color: #22b4b7;
+  font-weight: 500;
+}
+.this-is-pain {
+  position: absolute;
+  display: inline-block;
+  background: #22b4b7;
+  color: #fff;
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  border-radius: 6px;
+  border: 2px solid #22b4b7;
+  transition: all 0.3s ease;
+}
+.this-is-pain:hover {
+  background: none;
+  color: #22b4b7;
+}
+
+.this-is-pain2 {
+  position: absolute;
+  display: inline-block;
+  background: #22b4b7;
+  color: #fff;
+  font-size: 25px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  margin-left: 200px;
+  border-radius: 6px;
+  border: 2px solid #22b4b7;
+  transition: all 0.3s ease;
+}
+.this-is-pain2:hover {
+  background: none;
+  color: #22b4b7;
+}
+
+.hamburger {
+  position: relative;
+  display: block;
+  width: 35px;
+  cursor: pointer;
+
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0px;
+  transition: 0.4s;
+}
+
+.hamburger.is-active:before {
+  transform: rotate(-45deg) translate(-8px, 6px);
+}
+
+.hamburger.is-active:after {
+  transform: rotate(45deg) translate(-9px, -8px);
+}
+
+.hamburger.is-active .bar {
+  opacity: 0;
+}
+
+.mobile-nav {
+  font-family: 'Ubuntu', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  z-index: 98;
+  background-color: #121212;
+  padding-top: 120px;
+  transition: 0.4s;
+}
+
+.mobile-nav.is-active {
+  left: 0;
+}
+
+.mobile-nav a {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto 16px;
+  text-align: center;
+  padding: 12px 16px;
+  background-color: #121212;
+
+  color: #fff;
+  text-decoration: none;
+} 
+
+.mobile-nav a:hover {
+  background-color: #22b4b7;
+  border-radius: 20px;
+}
+
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+
+section {
+  padding: 100px 0;
+}
+section .title {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+section .title::before {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  width: 220px;
+  height: 3px;
+  background: #121212;
+  transform: translateX(-50%);
+}
+section .title::after {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  font-size: 20px;
+  color: #22b4b7;
+  padding: 5px;
+  background: #fff;
+  transform: translateX(-50%);
+}
+
+.features, .contributors {
+  color: #fff;
+  background: #121212;
+  font-family: 'Poppins', sans-serif;
+}
+
+.features, .contributorss {
+  color: #fff;
+  background: #121212;
+  font-family: 'Poppins', sans-serif;
+}
+
+.features .title::before,
+.contributors .title::before {
+  background: #fff;
+}
+
+.features .features-content,    
+.stats .stats-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardtugas {
+  width: 300px;
+  height: 350px;
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  margin: auto;
+}
+
+.cardtugas:hover {
+  background: #22b4b7;
+}
+.cardtugas:hover i {
+  color: #fff;
+}
+.cardtugas .box {
+  transition: all 0.3s ease;
+}
+.cardtugas:hover .box {
+  transform: scale(1.05);
+}
+.cardtugas i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.cardtugas .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+  text-align: justify;
+}
+
+.card {
+  width: 300px;
+  height: 350px;
+  background: #222;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.card.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.card:hover {
+  background: #22b4b7;
+}
+.card:hover i {
+  color: #fff;
+}
+.card .box {
+  transition: all 0.3s ease;
+}
+.card:hover .box {
+  transform: scale(1.05);
+}
+.card i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.card .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+}
+
+/* cardjadwal */
+.cardjadwal {
+  width: 300px;
+  height: 350px;
+  background: #222;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  justify-content: center;
+  margin: auto;
+}
+
+.cardjadwal:hover {
+  background: #22b4b7;
+}
+.cardjadwal:hover i {
+  color: #fff;
+}
+.cardjadwal .box {
+  transition: all 0.3s ease;
+}
+.cardjadwal:hover .box {
+  transform: scale(1.05);
+}
+.cardjadwal i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.cardjadwal .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+}
+
+
+/* KARTU 1*/
+
+.kartu1 {
+  width: 300px;
+  height: 350px;
+  background: #222;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: auto;
+  margin-left: 300px;
+}
+
+.kartu1:hover {
+  background: #22b4b7;
+}
+.kartu1:hover i {
+  color: #fff;
+}
+.kartu1 .box {
+  transition: all 0.3s ease;
+}
+.kartu1:hover .box {
+  transform: scale(1.05);
+}
+.kartu1 i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.kartu1 .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+}
+
+/* KARTU 2 */
+.kartu2 {
+  width: 300px;
+  height: 350px;
+  background: #222;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 300px;
+}
+
+.kartu2:hover {
+  background: #22b4b7;
+}
+.kartu2:hover i {
+  color: #fff;
+}
+.kartu2 .box {
+  transition: all 0.3s ease;
+}
+.kartu2:hover .box {
+  transform: scale(1.05);
+}
+.kartu2 i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.kartu2 .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+}
+
+.stats {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+}
+
+.stats p {
+  color: #fff;
+  font-size: 18px;
+}
+
+.boxx{
+  overflow: hidden;
+}
+
+/* bu epa */
+.contributorss .cardd {
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 300px;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.contributorss .cardd:hover{
+  background: #22b4b7;
+}
+
+.contributorss .cardd .boxx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contributorss .cardd:hover .boxx {
+  transform: scale(1.05);
+}
+
+.contributorss .cardd .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+
+.contributorss .cardd img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #22b4b7;
+  transition: all 0.3s ease;
+}
+
+.contributorss .cardd:hover img {
+  border-color: #fff;
+}
+
+/* ANGGOTA KELAS */
+.contributors .carousel .cardd {
+  background: #222;
+  border-radius: 6px;
+  padding: 25px 35px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.contributors .carousel .cardd:hover {
+  background: #22b4b7;
+}
+.contributors .carousel .cardd .boxx {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+.contributors .carousel .cardd:hover .boxx {
+  transform: scale(1.05);
+}
+.contributors .carousel .cardd .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+}
+.contributors .carousel .cardd img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #22b4b7;
+  transition: all 0.3s ease;
+
+}
+.contributors .carousel .cardd:hover img {
+  border-color: #fff;
+}
+
+
+/* JABATAN KELAS */
+.badges {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+.badges:hover {
+  cursor: pointer;
+}
+.badges.kmwkm {
+  background: #22b4b7;
+}
+.badges.kebersihan {
+  background: #2ECC71;
+  color: #121212;
+  border: none;
+}
+.badges.bendahara {
+  background: #ff1476;
+  color: #121212;
+}
+.badges.sekretaris {
+  background: #315dd4;
+}
+.badges.pendidikan {
+  background: #7289DA;
+  color: #222;
+}
+.badges.keamanan {
+  background: #0047ca;
+  color: #222;
+}
+.badges.keagamaan {
+  background: #F4D03F;
+  color: #222;
+}
+.badges.kesehatan {
+  background: #E74C3C;
+  color: #222;
+}
+.badges.absensi {
+  background: #45B39D;
+  color: #222;
+}
+
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 5px;
+  outline: none!important;
+  border-radius: 50%;
+  border: 2px solid #22b4b7!important;
+  transition: all 0.3s ease;
+}
+.owl-dot.active {
+  width: 35px;
+  border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover {
+  background: #22b4b7!important;
+}
+
+footer {
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  padding: 20px 23px;
+  color: #fff;
+  text-align: center;
+}
+footer span a {
+  color: #22b4b7;
+  text-decoration: none;
+}
+footer span a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* haha responsiveness kill me pain halp me pls kthxbai */
+
+@media (max-width: 1100px) {
+  .home .max-width {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .max-width {
+    padding: 0 50px;
+  }
+}
+
+
+@media (max-width: 950px) {
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+  .menu-btn i.active:before {
+    content: "\f00d";
+  }
+  .navbar .menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: -100%;
+    top: 0;
+    background: #121212;
+    text-align: center;
+    padding-top: 80px;
+    transition: all 0.3s ease;
+  }
+  .navbar .menu.active {
+    left: 0;
+  }
+  .navbar .menu li {
+    display: block;
+  }
+  .navbar .menu li a {
+    display: block;
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 25px;
+  }
+  .home .home-content .text-2 {
+    font-size: 70px;
+  }
+  .home .home-content .text-3 {
+    font-size: 35px;
+  }
+  .home .home-content a {
+    font-size: 23px;
+    padding: 10px 30px;
+  }
+
+  .card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 690px) {
+  .max-width {
+    padding: 0 25px;
+  }
+  .home .home-content .text-2 {
+    font-size: 60px;
+  }
+  .home .home-content .text-3 {
+    font-size: 32px;
+  }
+  .home .home-content a {
+    font-size: 20px;
+    padding: 9px 25px;
+  }
+  .card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .home .home-content .text-2 {
+    font-size: 50px;
+  }
+  .home .home-content .text-3 {
+    font-size: 27px;
+  }
+}
+
+
+
+.loader-wrapper {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #222;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+}
+
+
+
+
+.longfazers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.longfazers span {
+  position: absolute;
+  height: 4px;
+  width: 20%;
+  background: #22b4b7;
+}
+.longfazers span:nth-child(1) {
+  top: 20%;
+  animation: lf 0.6s linear infinite;
+  animation-delay: -5s;
+}
+.longfazers span:nth-child(2) {
+  top: 40%;
+  animation: lf2 0.8s linear infinite;
+  animation-delay: -1s;
+}
+.longfazers span:nth-child(3) {
+  top: 60%;
+  animation: lf3 0.6s linear infinite;
+}
+.longfazers span:nth-child(4) {
+  top: 80%;
+  animation: lf4 0.5s linear infinite;
+  animation-delay: -3s;
+}
+@keyframes lf {
+  0% {
+    left: -200%;
+ }
+  100% {
+    left: 200%;
+    opacity: 0;
+ }
+}
+@keyframes lf2 {
+  0% {
+    left: -200%;
+ }
+  100% {
+    left: 200%;
+    opacity: 0;
+ }
+}
+@keyframes lf3 {
+  0% {
+    left: -200%;
+ }
+  100% {
+    left: 100%;
+    opacity: 0;
+ }
+}
+@keyframes lf4 {
+  0% {
+    left: -200%;
+ }
+  100% {
+    left: 100%;
+    opacity: 0;
+ }
+}
+
+/* MENU */
+
+/* FORM */
+.contact-container {
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: 400px;
+}
+
+.contact-container h1 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #333;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* bu epa */
+.cardclasss {
+  width: 500px;
+  height: 530px;
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.cardclasss:hover {
+  transform: scale(1.05);
+}
+
+.cardclasss img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-content p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.cardclasss:hover {
+  background: #22b4b7;
+}
+.cardclasss:hover i {
+  color: #fff;
+}
+.cardclasss .box {
+  transition: all 0.3s ease;
+}
+.cardclasss:hover .box {
+  transform: scale(1.05);
+}
+.cardclasss i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.cardclasss .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+}
+
+
+/* CARD CLASS ACTIVITY */
+.cardclass {
+  width: 500px;
+  height: 530px;
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.cardclass:hover {
+  transform: scale(1.05);
+}
+
+.cardclass img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-content p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.cardclass:hover {
+  background: #22b4b7;
+}
+.cardclass:hover i {
+  color: #fff;
+}
+.cardclass .box {
+  transition: all 0.3s ease;
+}
+.cardclass:hover .box {
+  transform: scale(1.05);
+}
+.cardclass i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.cardclass .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+}
+
+/* CARD feedback */
+.cardfeedback {
+  width: 300px;
+  height: 450px;
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  margin: auto;
+}
+
+.cardfeedback:hover {
+  background: #22b4b7;
+}
+.cardfeedback:hover i {
+  color: #fff;
+}
+.cardfeedback .box {
+  transition: all 0.3s ease;
+}
+.cardfeedback:hover .box {
+  transform: scale(1.05);
+}
+.cardfeedback i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.cardfeedback .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+}
+
+
+/* IMAGE SLIDE */
+
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 10px;
+}
+
+.slider-container img {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto; /* Add some spacing around the images */
+  border: 10px solid #22b4b7; /* Add a border */
+  transition: transform 0.2s; /* Add a smooth transition on hover */
+}
+
+.slider-container img:hover {
+  transform: scale(1.1); /* Scale up the image slightly on hover */
+}
+
+.slider-container:hover {
+  transform:scale(1);
+  z-index: 2;
+}
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* Random */
+.textt {
+  padding-left: 550px;
+  padding-bottom: 50px;
+}
+
+/* Link file */
+.linkfile {
+  margin-right: auto;
+  font-size: 20px;
+}
+
+/* top */
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#back-to-top:hover {
+  background-color: #0056b3;
+}
+
+/* carcclassp5 */
+/* Style untuk container kartu */
+.card-container {
+  display: flex; /* Menyusun kartu secara horizontal */
+  flex-wrap: wrap; /* Mengizinkan kartu untuk pindah ke baris baru jika tidak cukup lebar */
+  justify-content: space-between; /* Membuat jarak antara kartu */
+  max-width: 1000px; /* Sesuaikan dengan lebar maksimum kartu */
+  margin: 0 auto; /* Untuk mengatur kartu ke tengah halaman */
+}
+
+/* Style untuk setiap kartu */
+.cardclassp5 {
+  width: 500px;
+  height: 530px;
+  background: #222;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  margin: 10px;
+  overflow: hidden; /* Tambahkan overflow: hidden; */
+}
+
+.cardclassp5 img:hover {
+  transform: scale(1.06);
+  transition: all 0.3s ease-in-out;
+}
+
+.cardclassp5 img {
+  width: 300px;
+  height: auto;
+  max-width: 100%; /* Pastikan gambar tidak melebihi lebar kontainer */
+  margin-bottom: 10px; /* Tambahkan margin bawah untuk memberikan jarak antar gambar */
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-content p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.cardclassp5:hover {
+  background: #22b4b7;
+}
+.cardclassp5:hover i {
+  color: #fff;
+}
+.cardclassp5 .box {
+  transition: all 0.3s ease;
+}
+.cardclassp5:hover .box {
+  transform: scale(1.05);
+}
+.cardclassp5 i {
+  font-size: 50px;
+  color: #22b4b7;
+  transition: color 0.3s ease;
+}
+.cardclassp5 .text {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px 0 7px 0;
+  color: #fff;
+}
+
+/* Text bawah start */
+.links {
+  color: white;
+  text-align: center;
+}
+/* Text bawah end */
+
